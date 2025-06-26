@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Event Lampung Tengah | KlikLamteng</title>
+  <meta name="description" content="Temukan event terbaru di Lampung Tengah. Informasi acara budaya, seminar, festival, dan kegiatan masyarakat.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixu1ic-O19aIamsTAPCtMPSNd4wTjeW92Bf5UnOyOonuY_tG_lDAM-LonXYPlh4QRLvElfmCqwXFh2C4il0-zLaVOgS7WZVmMuN-ZmtD7aIfQcrW9hs84WT-_qkCehDgDuQb_4uoyTJj6kQyPEYjB8P0cmv05e_CMy28SsLVuq1_oWAGWriMfcGvCIHg0/s2025/1750848496360.png" type="image/png">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #93c5fd;
+      --secondary: #059669;
+      --danger: #dc2626;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --light: #f8fafc;
+      --dark: #1e293b;
+      --darker: #0f172a;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --white: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+      --rounded: 8px;
+      --rounded-lg: 12px;
+      --rounded-xl: 16px;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      touch-action: manipulation;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: var(--light);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    
+    /* Animation Classes */
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .slide-up {
+      animation: slideUp 0.8s ease forwards;
+    }
+    
+    .scale-in {
+      animation: scaleIn 0.5s ease forwards;
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from { 
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to { 
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes slideInLeft {
+      from { 
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from { 
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    /* Header Styles */
+    .main-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-md);
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      animation: slideInLeft 0.6s ease forwards;
+    }
+    
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      height: 70vh;
+      min-height: 500px;
+      max-height: 800px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    
+    .hero-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      color: var(--white);
+      z-index: 2;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+    }
+    
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.8s ease forwards 0.3s;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin-bottom: 2rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.8s ease forwards 0.5s;
+    }
+    
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      animation: zoomIn 15s ease infinite alternate;
+    }
+    
+    .scroll-down {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--white);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      z-index: 3;
+    }
+    
+    @keyframes zoomIn {
+      from {
+        transform: scale(1);
+      opacity: 0.8;
+      }
+      to {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+      }
+      40% {
+        transform: translateY(-20px) translateX(-50%);
+      }
+      60% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+    }
+    
+    /* Announcement Slider */
+    .announcements-container {
+      max-width: 1200px;
+      margin: -4rem auto 4rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+      animation: slideUp 0.8s ease forwards 0.7s;
+    }
+    
+    .announcement-slider {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: var(--rounded-xl);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .announcement-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    
+    .announcement-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    
+    .announcement-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+    
+    .announcement-slide:hover img {
+      transform: scale(1.03);
+    }
+    
+    .slider-nav {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 2;
+    }
+    
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .slider-dot.active {
+      background: var(--white);
+      transform: scale(1.2);
+    }
+    
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      opacity: 0;
+    }
+    
+    .announcement-slider:hover .slider-arrow {
+      opacity: 1;
+    }
+    
+    .slider-arrow:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .slider-arrow.prev {
+      left: 1rem;
+    }
+    
+    .slider-arrow.next {
+      right: 1rem;
+    }
+    
+    /* Image Zoom Modal */
+    .image-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    
+    .image-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .image-modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      animation: scaleIn 0.3s ease forwards;
+    }
+    
+    .image-modal-img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: var(--rounded);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .image-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .image-modal-close:hover {
+      transform: rotate(90deg);
+    }
+    
+    /* Main Content */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+    
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+      animation: slideInLeft 0.6s ease forwards;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      animation: slideInRight 0.6s ease forwards 0.3s;
+    }
+    
+    /* Controls */
+    .controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      animation: fadeIn 0.8s ease forwards 0.4s;
+    }
+    
+    .search-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.75rem 1.5rem 0.75rem 3rem;
+      border-radius: var(--rounded);
+      border: 1px solid var(--light-gray);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 1rem center;
+      background-size: 1rem;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--rounded);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .filter-btn:hover {
+      background: var(--light-gray);
+      transform: translateY(-2px);
+    }
+    
+    /* Events Grid */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .event-card {
+      background: var(--white);
+      border-radius: var(--rounded-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.6s ease forwards;
+      animation-delay: calc(var(--delay) * 0.1s);
+    }
+    
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .event-image-container {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .event-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .event-card:hover .event-image {
+      transform: scale(1.05);
+    }
+    
+    .event-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--danger);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      z-index: 2;
+      animation: pulse 1.5s infinite;
+    }
+    
+    .event-badge.upcoming {
+      background: var(--warning);
+    }
+    
+    .saved-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--success);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      z-index: 2;
+    }
+    
+    .event-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .event-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .event-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .meta-icon {
+      color: var(--primary);
+      width: 1rem;
+      text-align: center;
+    }
+    
+    .event-description {
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--gray);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .event-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--rounded);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: rgba(37, 99, 235, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    /* Benefits Section */
+    .benefits {
+      background: var(--white);
+      border-radius: var(--rounded-xl);
+      padding: 4rem 2rem;
+      margin: 4rem 0;
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .benefits-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .benefit-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-radius: var(--rounded-lg);
+      transition: var(--transition);
+      background: var(--light);
+      animation: slideUp 0.6s ease forwards;
+      animation-delay: calc(var(--delay) * 0.1s);
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .benefit-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .benefit-card:hover .benefit-icon {
+      transform: scale(1.1);
+    }
+    
+    .benefit-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+    }
+    
+    .benefit-description {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    /* Filter Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      background: var(--white);
+      border-radius: var(--rounded-xl);
+      width: 90%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+    
+    .modal.active .modal-content {
+      transform: translateY(0);
+    }
+    
+    .modal-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gray);
+      transition: var(--transition);
+    }
+    
+    .modal-close:hover {
+      color: var(--danger);
+      transform: rotate(90deg);
+    }
+    
+    .modal-body {
+      padding: 1.5rem;
+    }
+    
+    .filter-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .filter-group-title {
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      display: block;
+      color: var(--dark);
+    }
+    
+    .filter-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--light-gray);
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+    
+    /* Event Detail Modal */
+    .event-modal .modal-content {
+      max-width: 800px;
+    }
+    
+    .event-detail-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .event-detail-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .event-detail-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: var(--rounded-lg);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .event-detail-image:hover {
+      transform: scale(1.02);
+    }
+    
+    .event-detail-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    
+    .event-detail-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: var(--rounded-lg);
+    }
+    
+    .event-detail-meta-item {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .event-detail-meta-icon {
+      color: var(--primary);
+      font-size: 1.25rem;
+      width: 24px;
+      text-align: center;
+    }
+    
+    .event-detail-meta-text {
+      flex: 1;
+    }
+    
+    .event-detail-meta-label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 0.25rem;
+    }
+    
+    .event-detail-meta-value {
+      font-weight: 500;
+      color: var(--dark);
+    }
+    
+    .event-detail-description {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--darker);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      margin-bottom: 1.5rem;
+      animation: pulse 2s infinite;
+    }
+    
+    .footer-logo img {
+      height: 40px;
+      width: auto;
+    }
+    
+    .footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-description {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .social-link {
+      color: var(--white);
+      font-size: 1.25rem;
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      color: var(--primary-light);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      opacity: 0.7;
+      font-size: 0.8rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* No Events */
+    .no-events {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem;
+      color: var(--gray);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-section {
+        height: 60vh;
+        min-height: 400px;
+        margin-bottom: 3rem;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      
+      .announcements-container {
+        margin: -2rem auto 3rem;
+      }
+      
+      .announcement-slider {
+        height: 200px;
+      }
+      
+      .slider-arrow {
+        opacity: 1 !important;
+      }
+      
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .controls {
+        flex-direction: column;
+      }
+      
+      .search-input {
+        width: 100%;
+      }
+      
+      .benefits {
+        padding: 3rem 1.5rem;
+      }
+      
+      .event-detail-content {
+        gap: 1rem;
+      }
+      
+      .event-detail-image {
+        height: 200px;
+      }
+      
+      .event-detail-title {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-section {
+        height: 70vh;
+        min-height: 300px;
+      }
+      
+      .hero-title {
+        font-size: 1.75rem;
+      }
+      
+      .header-container {
+        padding: 0 1rem;
+      }
+      
+      .logo img {
+        height: 30px;
+      }
+      
+      .main-container {
+        padding: 0 1rem 3rem;
+      }
+      
+      .modal-content {
+        width: 95%;
+      }
+      
+      .announcement-slider {
+        height: 150px;
+      }
+      
+      .slider-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="https://kliklamtengku.web.id" class="logo">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixu1ic-O19aIamsTAPCtMPSNd4wTjeW92Bf5UnOyOonuY_tG_lDAM-LonXYPlh4QRLvElfmCqwXFh2C4il0-zLaVOgS7WZVmMuN-ZmtD7aIfQcrW9hs84WT-_qkCehDgDuQb_4uoyTJj6kQyPEYjB8P0cmv05e_CMy28SsLVuq1_oWAGWriMfcGvCIHg0/s2025/1750848496360.png" alt="Event Lampung Tengah Logo">
+      </a>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5guCM6gxgWNPczezxhuatoouLF_3h5jqgSj_CPhk-ragZoXU0fgSGWeW9BtbepCK3UnyVppavspePUmeufdarGSOQeKEJftBvWH95cOcahh6EPkn4BtoRt0lMgsP8_udq7hDGpnix2-b4GUtxU8_8zCLd7AAc4Z_tFmAe6Kf3HyapaXti27hJj7s2Sa0/s643/images.jpeg" 
+         alt="Event Lampung Tengah" 
+         class="hero-image">
+    <div class="hero-content">
+      <h1 class="hero-title">Temukan Acara Terbaik di Lampung Tengah</h1>
+      <p class="hero-subtitle">Jelajahi berbagai kegiatan, festival, dan acara menarik di wilayah Lampung Tengah (Website masih masa demo)</p>
+    </div>
+    <div class="scroll-down" onclick="document.querySelector('.announcements-container').scrollIntoView({ behavior: 'smooth' })">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+  
+  <!-- Announcement Slider -->
+  <div class="announcements-container">
+    <div class="announcement-slider">
+      <div class="announcement-track" id="announcementTrack">
+        <div class="announcement-slide">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsw4DexL5JDZLw4lltO69CfFshyxZe9WQkf8hhwHqrVAsFi_GGRXZJxUrTx1sReDWXkI1qDhpDk-mshlslCCu0QdjNrHHuMSHZ4mwV1Q_g5ZBQ1wf0_WnwAuoduCM83D8qk6Yu91cP34KirWHBUoq5JK019gAx-nB4KGAOTFdpIprU2v1t-OQu1nkfA5U/s3360/1_20250626_112209_0000.png" 
+               alt="Pengumuman Event" 
+               class="announcement-image"
+               onclick="window.open('#', '_blank')">
+        </div>
+        <div class="announcement-slide">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRb-QvnrGAT3hkvxV9HGI3GMuLd_sUsiQG90317wz1sh58fvQK0OQeiBzag9rLR0wbo421PaadRkw0e0kcKwHvXNnnXi-g_h94OzpmlULZ4phCxyzPa_S4E-pcOAGsCv_PDN3lviQZNkJPrN0AriI2OzarBLTt2YJOc-pEy3KDTnit_Z3NobyR1xfBfrM/s3360/2_20250626_112209_0001.png" 
+               alt="Pengumuman Event" 
+               class="announcement-image"
+               onclick="window.open('https://kliklamtengku.web.id', '_blank')">
+        </div>
+        <div class="announcement-slide">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDvMmiUhS5K4i0BkQYnRx-eauv9Rk4JWh4hahFt_E2S7JciGXeVI09bRZUF9DTBrKHBEJy77ahvreEJchrcCHMbi1OnvM3HuOI3zUFb4qxMfeHpfEdBW0esBvYacGfuxKjaXE_hlOvSYYruLHgOigdR4wwtoy2sDrOg0MK2lgO_pg1643K6cp1thpBsck/s3360/3_20250626_112209_0002.png" 
+               alt="Pengumuman Event" 
+               class="announcement-image"
+               onclick="window.open('https://instagram.com/kliklamteng', '_blank')">
+        </div>
+      </div>
+      <button class="slider-arrow prev" id="prevSlide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-arrow next" id="nextSlide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="slider-nav" id="sliderNav">
+        <div class="slider-dot active"></div>
+        <div class="slider-dot"></div>
+        <div class="slider-dot"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Image Zoom Modal -->
+  <div class="image-modal" id="imageModal">
+    <div class="image-modal-content">
+      <button class="image-modal-close" id="imageModalClose">&times;</button>
+      <img src="" alt="Zoomed Image" class="image-modal-img" id="zoomedImage">
+    </div>
+  </div>
+  
+  <!-- Main Content -->
+  <main class="main-container">
+    <h2 class="section-title">Daftar Acara</h2>
+    
+    <div class="controls">
+      <input type="text" id="searchInput" class="search-input" placeholder="Cari event...">
+      <button class="filter-btn" id="filterBtn">
+        <i class="fas fa-filter"></i> Filter Event
+      </button>
+    </div>
+    
+    <div class="events-grid" id="eventsContainer">
+      <!-- Events will be loaded here -->
+    </div>
+    
+    <div class="benefits">
+      <div class="benefits-container">
+        <h2 class="section-title">Keuntungan Menggunakan Platform Kami</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card" style="--delay: 1">
+            <div class="benefit-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <h3 class="benefit-title">Lokasi Jelas</h3>
+            <p class="benefit-description">Informasi lokasi lengkap dengan petunjuk arah yang mudah dipahami</p>
+          </div>
+          <div class="benefit-card" style="--delay: 2">
+            <div class="benefit-icon"><i class="fas fa-calendar-day"></i></div>
+            <h3 class="benefit-title">Jadwal Rinci</h3>
+            <p class="benefit-description">Waktu acara detail sampai jam dan menit untuk perencanaan tepat</p>
+          </div>
+          <div class="benefit-card" style="--delay: 3">
+            <div class="benefit-icon"><i class="fas fa-bell"></i></div>
+            <h3 class="benefit-title">Notifikasi Cepat</h3>
+            <p class="benefit-description">Dapatkan pemberitahuan acara penting langsung ke perangkat Anda</p>
+          </div>
+          <div class="benefit-card" style="--delay: 4">
+            <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3 class="benefit-title">Akses Mudah</h3>
+            <p class="benefit-description">Platform responsif yang bisa diakses dari smartphone, tablet, atau komputer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Filter Modal -->
+  <div class="modal" id="filterModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Filter Event</h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="filter-group">
+          <label class="filter-group-title">Lokasi Event</label>
+          <div class="filter-options" id="locationFilters">
+            <!-- Location filters will be added here -->
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <label class="filter-group-title">Tanggal Event</label>
+          <div class="filter-options">
+            <div class="filter-option">
+              <input type="radio" id="dateAll" name="dateFilter" value="all" checked>
+              <label for="dateAll">Semua Tanggal</label>
+            </div>
+            <div class="filter-option">
+              <input type="radio" id="dateWeek" name="dateFilter" value="week">
+              <label for="dateWeek">Minggu Ini</label>
+            </div>
+            <div class="filter-option">
+              <input type="radio" id="dateMonth" name="dateFilter" value="month">
+              <label for="dateMonth">Bulan Ini</label>
+            </div>
+            <div class="filter-option">
+              <input type="radio" id="dateUpcoming" name="dateFilter" value="upcoming">
+              <label for="dateUpcoming">Akan Datang</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="resetFilters">
+          Bersihkan Filter
+        </button>
+        <button class="btn btn-primary" id="applyFilters">
+          Saring Sekarang
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Event Detail Modal -->
+  <div class="modal event-modal" id="eventModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Detail Event</h3>
+        <button class="modal-close" id="eventModalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="event-detail-content" id="eventDetailContent">
+          <!-- Event details will be loaded here -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="closeEventModal">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixu1ic-O19aIamsTAPCtMPSNd4wTjeW92Bf5UnOyOonuY_tG_lDAM-LonXYPlh4QRLvElfmCqwXFh2C4il0-zLaVOgS7WZVmMuN-ZmtD7aIfQcrW9hs84WT-_qkCehDgDuQb_4uoyTJj6kQyPEYjB8P0cmv05e_CMy28SsLVuq1_oWAGWriMfcGvCIHg0/s2025/1750848496360.png" alt="Klik Lamteng Logo">
+        </div>
+        <p class="footer-description">
+          Klik Lamteng adalah media lokal independen yang menyajikan informasi seputar Lampung Tengah, mulai dari event, budaya, hingga isu masyarakat. Bukan milik pemerintah, Klik Lamteng hadir sebagai ruang kreatif dan informatif bagi warga lokal.
+        </p>
+        <div class="social-links">
+          <a href="https://instagram.com/kliklamteng" class="social-link" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="kliklamtengku.web.id" class="social-link">
+            <i class="fa fa-globe"></i>
+          </a>
+        </div>
+        <p class="copyright">
+          © 2025 Klik Lamteng, Seluruh hak dilindungi perundang-undangan.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    const API_URL = 'https://sheetjson.com/spreadsheets/d/1V19S0FJlvs48_MokCpztLo04juz6V2Id1L90BoyxQEM?gid=0';
+    const DEFAULT_POSTER = 'https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80';
+    const LOCAL_STORAGE_KEY = 'savedEvents';
+    
+    let allEvents = [];
+    let savedEvents = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {};
+    let currentSlide = 0;
+    let slideInterval;
+    
+    // DOM Elements
+    const eventsContainer = document.getElementById('eventsContainer');
+    const searchInput = document.getElementById('searchInput');
+    const filterBtn = document.getElementById('filterBtn');
+    const filterModal = document.getElementById('filterModal');
+    const modalClose = document.getElementById('modalClose');
+    const locationFilters = document.getElementById('locationFilters');
+    const resetFilters = document.getElementById('resetFilters');
+    const applyFiltersBtn = document.getElementById('applyFilters');
+    const eventModal = document.getElementById('eventModal');
+    const eventModalClose = document.getElementById('eventModalClose');
+    const closeEventModal = document.getElementById('closeEventModal');
+    const eventDetailContent = document.getElementById('eventDetailContent');
+    const imageModal = document.getElementById('imageModal');
+    const imageModalClose = document.getElementById('imageModalClose');
+    const zoomedImage = document.getElementById('zoomedImage');
+    const announcementTrack = document.getElementById('announcementTrack');
+    const prevSlideBtn = document.getElementById('prevSlide');
+    const nextSlideBtn = document.getElementById('nextSlide');
+    const sliderNav = document.getElementById('sliderNav');
+    
+    // Initialize the app
+    async function init() {
+      try {
+        await fetchEvents();
+        renderLocationFilters();
+        renderEvents(allEvents);
+        setupEventListeners();
+        startSlider();
+        setupScrollAnimations();
+      } catch (error) {
+        console.error('Error initializing app:', error);
+        showError();
+      }
+    }
+    
+    function showError() {
+      eventsContainer.innerHTML = `
+        <div class="no-events">
+          <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+          <h3 style="font-weight: 500; margin-bottom: 0.5rem;">Gagal memuat data</h3>
+          <p>Silakan refresh halaman atau coba lagi nanti</p>
+        </div>
+      `;
+    }
+    
+    // Setup event listeners
+    function setupEventListeners() {
+      searchInput.addEventListener('input', filterEvents);
+      filterBtn.addEventListener('click', () => filterModal.classList.add('active'));
+      modalClose.addEventListener('click', () => filterModal.classList.remove('active'));
+      applyFiltersBtn.addEventListener('click', () => {
+        filterEvents();
+        filterModal.classList.remove('active');
+      });
+      resetFilters.addEventListener('click', () => {
+        document.querySelectorAll('input[name="locationFilter"]').forEach(el => el.checked = false);
+        document.getElementById('dateAll').checked = true;
+        filterEvents();
+      });
+      
+      // Event modal listeners
+      eventModalClose.addEventListener('click', () => eventModal.classList.remove('active'));
+      closeEventModal.addEventListener('click', () => eventModal.classList.remove('active'));
+      
+      // Image modal listeners
+      imageModalClose.addEventListener('click', () => imageModal.classList.remove('active'));
+      
+      // Slider controls
+      prevSlideBtn.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        goToSlide(currentSlide - 1);
+        startSlider();
+      });
+      
+      nextSlideBtn.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        goToSlide(currentSlide + 1);
+        startSlider();
+      });
+      
+      // Slider dots navigation
+      Array.from(sliderNav.children).forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          clearInterval(slideInterval);
+          goToSlide(index);
+          startSlider();
+        });
+      });
+      
+      // Close modals when clicking outside
+      filterModal.addEventListener('click', (e) => {
+        if (e.target === filterModal) {
+          filterModal.classList.remove('active');
+        }
+      });
+      
+      eventModal.addEventListener('click', (e) => {
+        if (e.target === eventModal) {
+          eventModal.classList.remove('active');
+        }
+      });
+      
+      imageModal.addEventListener('click', (e) => {
+        if (e.target === imageModal) {
+          imageModal.classList.remove('active');
+        }
+      });
+      
+      // Handle clicks on event detail buttons (delegated)
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('.btn-detail')) {
+          const eventId = e.target.closest('.btn-detail').dataset.id;
+          const event = allEvents.find(ev => ev.id === eventId);
+          if (event) {
+            showEventDetail(event);
+          }
+        }
+        
+        // Handle clicks on event images
+        if (e.target.closest('.event-image-container') || e.target.closest('.event-detail-image')) {
+          const imgElement = e.target.closest('.event-image-container') ? 
+            e.target.closest('.event-image-container').querySelector('.event-image') :
+            e.target.closest('.event-detail-image');
+            
+          if (imgElement) {
+            zoomedImage.src = imgElement.src;
+            zoomedImage.alt = imgElement.alt;
+            imageModal.classList.add('active');
+          }
+        }
+      });
+    }
+    
+    // Setup scroll animations
+    function setupScrollAnimations() {
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.event-card, .benefit-card');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+          
+          if (elementPosition < screenPosition) {
+            element.style.animationPlayState = 'running';
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', animateOnScroll);
+      animateOnScroll(); // Run once on load
+    }
+    
+    // Slider functions
+    function startSlider() {
+      slideInterval = setInterval(() => {
+        goToSlide(currentSlide + 1);
+      }, 3000); // Changed to 3 seconds
+    }
+    
+    function goToSlide(slideIndex) {
+      const slides = document.querySelectorAll('.announcement-slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      
+      if (slideIndex >= slides.length) {
+        slideIndex = 0;
+      } else if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+      }
+      
+      announcementTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+      
+      // Update active dot
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex].classList.add('active');
+      
+      currentSlide = slideIndex;
+    }
+    
+    // Fetch events from API
+    async function fetchEvents() {
+      try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        
+        if (!Array.isArray(data)) {
+          throw new Error('Data format is invalid');
+        }
+        
+        const now = new Date();
+        allEvents = data
+          .filter(event => {
+            // Filter out events without title or that have ended
+            if (!event.Judul) return false;
+            
+            const endDate = new Date(event['Tanggal Berakhir']);
+            return endDate >= now;
+          })
+          .map((event, index) => {
+            // Add formatted dates and ID for easier sorting
+            return {
+              ...event,
+              id: `event-${index}`,
+              startDate: new Date(event['Tanggal mulai']),
+              endDate: new Date(event['Tanggal Berakhir'])
+            };
+          });
+      } catch (error) {
+        console.error('Error fetching events:', error);
+        throw error;
+      }
+    }
+    
+    // Render location filters
+    function renderLocationFilters() {
+      const locations = [...new Set(allEvents.map(event => event.Lokasi))].filter(Boolean);
+      locationFilters.innerHTML = '';
+      
+      locations.forEach(location => {
+        const filterId = `location-${location.replace(/\s+/g, '-').toLowerCase()}`;
+        
+        const filterOption = document.createElement('div');
+        filterOption.className = 'filter-option';
+        filterOption.innerHTML = `
+          <input type="checkbox" id="${filterId}" name="locationFilter" value="${location}">
+          <label for="${filterId}">${location}</label>
+        `;
+        
+        locationFilters.appendChild(filterOption);
+      });
+    }
+    
+    // Filter events based on criteria
+    function filterEvents() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedLocations = Array.from(document.querySelectorAll('input[name="locationFilter"]:checked')).map(el => el.value);
+      const dateFilter = document.querySelector('input[name="dateFilter"]:checked').value;
+      
+      let filteredEvents = allEvents.filter(event => {
+        // Search filter
+        const matchesSearch = 
+          event.Judul.toLowerCase().includes(searchTerm) ||
+          (event['Deskripsi Lengkap'] && event['Deskripsi Lengkap'].toLowerCase().includes(searchTerm)) ||
+          (event.Lokasi && event.Lokasi.toLowerCase().includes(searchTerm));
+        
+        // Location filter
+        const matchesLocation = selectedLocations.length === 0 || 
+          (event.Lokasi && selectedLocations.includes(event.Lokasi));
+        
+        // Date filter
+        const now = new Date();
+        const oneWeekFromNow = new Date();
+        oneWeekFromNow.setDate(now.getDate() + 7);
+        
+        const oneMonthFromNow = new Date();
+        oneMonthFromNow.setMonth(now.getMonth() + 1);
+        
+        let matchesDate = true;
+        if (dateFilter === 'week') {
+          matchesDate = event.startDate <= oneWeekFromNow;
+        } else if (dateFilter === 'month') {
+          matchesDate = event.startDate <= oneMonthFromNow;
+        } else if (dateFilter === 'upcoming') {
+          matchesDate = event.startDate > now;
+        }
+        
+        return matchesSearch && matchesLocation && matchesDate;
+      });
+      
+      // Sort by date (ascending by default)
+      filteredEvents.sort((a, b) => a.startDate - b.startDate);
+      
+      renderEvents(filteredEvents);
+    }
+    
+    // Render events to the page
+    function renderEvents(events) {
+      if (events.length === 0) {
+        eventsContainer.innerHTML = `
+          <div class="no-events">
+            <i class="fas fa-calendar-times" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 500; margin-bottom: 0.5rem;">Tidak ada event yang ditemukan</h3>
+            <p>Coba gunakan kata kunci atau filter yang berbeda</p>
+          </div>
+        `;
+        return;
+      }
+      
+      const now = new Date();
+      eventsContainer.innerHTML = '';
+      
+      events.forEach((event, index) => {
+        const isLive = now >= event.startDate && now <= event.endDate;
+        const isUpcoming = now < event.startDate;
+        const posterUrl = event['Poster (Url)']?.trim() || DEFAULT_POSTER;
+        const isSaved = savedEvents[event.id];
+        
+        const eventElement = document.createElement('div');
+        eventElement.className = 'event-card';
+        eventElement.style.setProperty('--delay', index % 6);
+        eventElement.style.animationPlayState = 'paused';
+        eventElement.innerHTML = `
+          <div class="event-image-container">
+            ${isLive ? '<div class="event-badge live"><i class="fas fa-play-circle"></i> LIVE</div>' : ''}
+            ${isUpcoming ? '<div class="event-badge upcoming"><i class="fas fa-clock"></i> COMING SOON</div>' : ''}
+            ${isSaved ? '<div class="saved-badge"><i class="fas fa-bookmark"></i> Tersimpan</div>' : ''}
+            <img src="${posterUrl}" alt="${event.Judul}" class="event-image" loading="lazy">
+          </div>
+          <div class="event-content">
+            <h3 class="event-title">${event.Judul}</h3>
+            <div class="event-meta">
+              <div class="meta-item">
+                <i class="fas fa-calendar-alt meta-icon"></i>
+                <span>${formatDateRange(event.startDate, event.endDate)}</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt meta-icon"></i>
+                <span>${event.Lokasi || 'Lokasi belum ditentukan'}</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-user-tie meta-icon"></i>
+                <span>${event.Penyelenggaraan || 'Penyelenggara belum ditentukan'}</span>
+              </div>
+            </div>
+            <p class="event-description">${event['Deskripsi Lengkap'] || 'Tidak ada deskripsi tersedia.'}</p>
+            <div class="event-actions">
+              <button class="btn btn-primary btn-detail" data-id="${event.id}">
+                <i class="fas fa-info-circle"></i> Detail
+              </button>
+            </div>
+          </div>
+        `;
+        
+        eventsContainer.appendChild(eventElement);
+      });
+    }
+    
+    // Show event detail modal
+    function showEventDetail(event) {
+      const posterUrl = event['Poster (Url)']?.trim() || DEFAULT_POSTER;
+      
+      eventDetailContent.innerHTML = `
+        <div class="event-detail-header">
+          <img src="${posterUrl}" alt="${event.Judul}" class="event-detail-image">
+          <h3 class="event-detail-title">${event.Judul}</h3>
+        </div>
+        
+        <div class="event-detail-meta">
+          <div class="event-detail-meta-item">
+            <div class="event-detail-meta-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="event-detail-meta-text">
+              <div class="event-detail-meta-label">Tanggal Mulai</div>
+              <div class="event-detail-meta-value">${formatDateOnly(event.startDate)}</div>
+            </div>
+          </div>
+          
+          <div class="event-detail-meta-item">
+            <div class="event-detail-meta-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="event-detail-meta-text">
+              <div class="event-detail-meta-label">Tanggal Berakhir</div>
+              <div class="event-detail-meta-value">${formatDateOnly(event.endDate)}</div>
+            </div>
+          </div>
+          
+          <div class="event-detail-meta-item">
+            <div class="event-detail-meta-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="event-detail-meta-text">
+              <div class="event-detail-meta-label">Lokasi</div>
+              <div class="event-detail-meta-value">${event.Lokasi || 'Lokasi belum ditentukan'}</div>
+            </div>
+          </div>
+          
+          <div class="event-detail-meta-item">
+            <div class="event-detail-meta-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="event-detail-meta-text">
+              <div class="event-detail-meta-label">Penyelenggara</div>
+              <div class="event-detail-meta-value">${event.Penyelenggaraan || 'Tidak diketahui'}</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="event-detail-description">
+          <h4>Deskripsi Acara</h4>
+          <p>${event['Deskripsi Lengkap'] || 'Tidak ada deskripsi tersedia.'}</p>
+        </div>
+      `;
+      
+      eventModal.classList.add('active');
+    }
+    
+    // Format date range for display
+    function formatDateRange(startDate, endDate) {
+      const start = formatDateOnly(startDate);
+      const end = formatDateOnly(endDate);
+      
+      if (start === end) {
+        return start;
+      }
+      return `${start} - ${end}`;
+    }
+    
+    // Format date only (without time)
+    function formatDateOnly(date) {
+      return date.toLocaleDateString('id-ID', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+    }
+    
+    // Initialize the app
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
